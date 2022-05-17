@@ -7,6 +7,8 @@ for (let i = 0; i < numOfDrumBtns; i++){
         
         makeSound(buttonInnerHTML);
 
+        buttonAnimation(buttonInnerHTML);
+
         }
     )};
 
@@ -55,3 +57,15 @@ function makeSound (key){
             break ;   
 }
 };
+
+function buttonAnimation (currentKey) {
+
+    let activeButton = document.querySelector("." + currentKey);
+
+    activeButton.classList.add("pressed");
+
+    setTimeout(function() {
+        activeButton.classList.remove("pressed");
+    }, 100);
+    }
+
